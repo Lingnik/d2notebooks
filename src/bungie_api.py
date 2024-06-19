@@ -1,103 +1,127 @@
+import os
 import requests
-from urllib.parse import quote
+import json
+from datetime import datetime
+from src.bungie_manifest import BungieManifest
+from src.bungie_profile import BungieProfile
+from src.settings import CACHE_MAX_AGE_HOURS
+
 
 class BungieApi:
     def __init__(self, api_key, access_token):
         self.api_key = api_key
         self.access_token = access_token
+        self.manifest = BungieManifest(self)
+        self.profile = BungieProfile(self)
+        self.cache = {} # {'<path>' : {'json': <json>, 'response': <response>, 'timestamp': <timestamp>, 'filename': <filename>}
 
     def __default_headers(self):
         return {
             'X-API-Key': self.api_key,
         }
 
-    def get_primary_membership_id_and_type(self, username):
-        username = quote(username)
-        url = f"https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/-1/{username}/"
-        response = requests.get(url, headers=self.__default_headers())
-        data = response.json()
+    def request_json(self, path: str, use_cache: bool=False, bust_cache: bool=False):
+        return self.request(path, use_cache, bust_cache).get('json')
+    
+    def request(self, path: str, use_cache: bool=False, bust_cache: bool=False):
+        print("+bungie_api.BungieApi.request()")
+        url = f'https://www.bungie.net{path}'
+        key = self.sanitize_path_for_key(path)
 
-        for player in data['Response']:
-            membership_id = player['membershipId']
-            membership_type = player['membershipType']
-            print(f"Checking membership ID {membership_id} with membership type {membership_type}")
-            profile_url = f"https://www.bungie.net/Platform/Destiny2/{membership_type}/Profile/{membership_id}/?components=100"
-            profile_response = requests.get(profile_url, headers=self.__default_headers())
-            profile_data = profile_response.json()
-            if 'profile' in profile_data['Response'] and profile_data['Response']['profile']['data']['userInfo']['crossSaveOverride'] == membership_type:
-                print(f"Crosave override found for {membership_id}")
-                return membership_id, membership_type
-
-        return None
-
-    def get_character_ids_and_classes(self, membership_id, membership_type):
-        url = f"https://www.bungie.net/Platform/Destiny2/{membership_type}/Profile/{membership_id}/?components=200"
-        response = requests.get(url, headers=self.__default_headers())
-        data = response.json()
-
-        character_data = data['Response']['characters']['data']
-        character_ids_and_classes = {}
-        for character_id, character_info in character_data.items():
-            class_type = character_info['classType']
-            if class_type == 0:
-                class_name = 'Titan'
-            elif class_type == 1:
-                class_name = 'Hunter'
-            elif class_type == 2:
-                class_name = 'Warlock'
+        if use_cache:
+            expired = self.cache_expired(key)
+            if expired is None:
+                if self.key_is_cached_on_disk(key):
+                    print(f"Key {key} not in cache but on disk, caching from disk")
+                    with open(f'data/{key}', 'rb') as f:
+                        data = f.read()
+                    json_data = None
+                    try:
+                        json_data = json.loads(data)
+                    except Exception:
+                        print("File is not JSON")
+                        pass
+                    self.cache[key] = {
+                        'json': json_data,
+                        'text': None,
+                        'content': data,
+                        'response': None,
+                        'timestamp': datetime.now(),
+                        'filename': key,
+                    }
+                    return self.cache[key]
+                else:
+                    print(f"Key {key} not in cache, fetching from network")
+            elif expired is True:
+                print(f"Key {key} in cache but expired, fetching from network")
+                self.prune_cache(key)
+            elif bust_cache:
+                print(f"Key {key} in cache, but busting as requested")
+                self.prune_cache(key)
             else:
-                class_name = 'Unknown'
-            character_ids_and_classes[character_id] = class_name
+                print(f"Key {key} in cache and not expired, returning cached response")
+                return self.cache[key]
+            
 
-        return character_ids_and_classes
-
-    def get_manifest(self):
-        url = f'https://www.bungie.net/Platform/Destiny2/Manifest/'
-
-        response = requests.get(url, headers=self.__default_headers())
+        print(f"Fetching {url} for key {key}")
+        response: requests.Response = requests.get(url, headers=self.__default_headers())
         response.raise_for_status()
 
-        manifest = response.json()
+        response_json = None
+        try:
+            response_json = response.json()
+        except ValueError:
+            pass
 
-        return manifest
+        response_text = None
+        try:
+            response_text = response.text
+        except ValueError:
+            pass
 
-    def __get_item_definitions(self, manifest):
-        item_definitions_url = f'https://www.bungie.net{manifest["Response"]["jsonWorldComponentContentPaths"]["en"]["DestinyInventoryItemDefinition"]}'
+        output = {
+            'json': response_json,
+            'text': response_text,
+            'content': response.content,
+            'response': response,
+            'timestamp': datetime.now(),
+            'filename': key,
+        }
 
-        response = requests.get(item_definitions_url, headers=self.__default_headers())
-        response.raise_for_status()
+        if use_cache:
+            print(f"Caching response for key {key}")
+            # Write to disk
+            os.makedirs('data', exist_ok=True)
+            filename = f'data/{key}'
+            if response_json:
+                with open(filename, 'w') as f:
+                    json.dump(response_json, f, indent=4)
+            else:
+                with open(filename, 'wb') as f:
+                    f.write(response.content)
 
-        item_definitions = response.json()
+        return output
+    
+    def prune_cache(self, key: str):
+        print("**** PRUNING KEY: ", key, " ****")
+        if key in self.cache:
+            del self.cache[key]
+            os.remove(f'data/{key}')
+    
+    @staticmethod
+    def sanitize_path_for_key(path: str):
+        return path.replace('/', '__')
 
-        return item_definitions
-
-    def __get_stat_definitions(self, manifest):
-        stat_definitions_url = f'https://www.bungie.net{manifest["Response"]["jsonWorldComponentContentPaths"]["en"]["DestinyStatDefinition"]}'
-
-        response = requests.get(stat_definitions_url, headers=self.__default_headers())
-        response.raise_for_status()
-
-        stat_definitions = response.json()
-
-        return stat_definitions
-
-    def get_static_definitions(self):
-        manifest = self.get_manifest()
-        item_definitions = self.__get_item_definitions(manifest)
-        stat_definitions = self.__get_stat_definitions(manifest)
-        return item_definitions, stat_definitions
-
-    # full description of components are on the bungie API documentation: https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html
-    def get_profile(self, access_token, membership_type, membership_id, components):
-        headers = self.__default_headers() 
-        headers['Authorization'] = f'Bearer {access_token}'
-
-        joined_components = ','.join(str(c) for c in components)
-
-        url = f'https://www.bungie.net/Platform/Destiny2/{membership_type}/Profile/{membership_id}/?components={joined_components}'
-
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-
-        data = response.json()['Response']
-        return data
+    @staticmethod
+    def key_is_cached_on_disk(key: str):
+        return os.path.exists(f'data/{key}')
+    
+    def cache_expired(self, key: str) -> bool:
+        """
+        Return whether the cache is expired for the given key.
+        
+        If the key is not in the cache, or the key is missing a timestamp, returns falsey None.
+        """
+        if key not in self.cache or 'timestamp' not in self.cache[key] or self.cache[key]['timestamp'] is None:
+            return None
+        return (datetime.now() - self.cache[key]['timestamp']) > CACHE_MAX_AGE_HOURS
