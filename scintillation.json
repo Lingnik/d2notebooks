@@ -1,0 +1,2155 @@
+s = [w for w in api.manifest.DestinyInventoryItemDefinition.weapons if w.display_properties.name == 'Scintillation'][0]
+{k: s.manifest.get('stats').get('stats').get(k).get('value') for k in s.manifest.get('stats').get('stats')}
+
+""" DestinyPresentationNodeDefinition:
+""" - Items (3790247699)
+"""   - Weapons (1528930164)
+"""     - Heavy (3686962409)
+"""       - Linear Fusion Rifle ()
+
+
+
+{
+    "2591257541": { """ +DestinyInventoryItemDefinition 2591257541 """
+        "displayProperties": { """ <-
+            "description": "",
+            "name": "Scintillation", """ <-
+            "icon": "/common/destiny2_content/icons/880c56767df0dc8253ac458d252d0919.jpg",
+            "hasIcon": true
+        },
+        "tooltipNotifications": [
+            {
+                "displayString": "This weapon can be enhanced.\n\nOpen the details screen of this weapon and select Enhance Weapon from the Empty Enhancement Socket in weapon mods.",
+                "displayStyle": "ui_display_style_info"
+            },
+            {
+                "displayString": "This weapon can be enhanced further.",
+                "displayStyle": "ui_display_style_crafting"
+            },
+            {
+                "displayString": "This weapon is fully enhanced.",
+                "displayStyle": "ui_display_style_crafting"
+            }
+        ],
+        "collectibleHash": 536976377, """ +DestinyCollectibleDefinition "536976377": {
+                "displayProperties": {
+                    "description": "",
+                    "name": "Scintillation",
+                    "icon": "/common/destiny2_content/icons/8e5d802ed3229800a39c56136c64d0b1.jpg",
+                    "hasIcon": true
+                },
+                "scope": 0,
+                "sourceString": "Source: Nightfall", """ <-
+                "sourceHash": 3142874552, """ NO VALID MANIFEST OBJECT
+                "itemHash": 2591257541, """ ^CIRCULAR REFERENCE, SHOULD NOT DEREFERENCE
+                "acquisitionInfo": {
+                    "runOnlyAcquisitionRewardSite": false
+                },
+                "stateInfo": {
+                    "requirements": {
+                        "entitlementUnavailableMessage": ""
+                    }
+                },
+                "presentationNodeType": 2,
+                "traitIds": [],
+                "traitHashes": [],
+                "parentNodeHashes": [ """ DestinyPresentationNodeDefinition """
+                    690633563 """ +DestinyPresentationNodeDefinition "690633563": {
+                        "displayProperties": {
+                            "description": "",
+                            "name": "Linear Fusion Rifles",
+                            "hasIcon": false
+                        },
+                        "nodeType": 1,
+                        "isSeasonal": false,
+                        "scope": 1,
+                        "objectiveHash": 7340533,
+                        "children": { """ ^
+                            "presentationNodes": [],
+                            "collectibles": [ """ ^
+                                {
+                                    "collectibleHash": 2963869879,
+                                    "nodeDisplayPriority": 0
+                                },
+                                ...
+                                { """ ^
+                                    "collectibleHash": 536976377, """ ^CIRCULAR REFERENCE, SHOULD NOT DEREFERENCE
+                                    "nodeDisplayPriority": 0
+                                }, """ ^
+                                ...
+                           ]
+                        },
+                        "displayStyle": 0,
+                        "screenStyle": 0,
+                        "requirements": {
+                            "entitlementUnavailableMessage": ""
+                        },
+                        "disableChildSubscreenNavigation": false,
+                        "categoryScoreUnlockValueHash": 0,
+                        "maxCategoryRecordScore": 0,
+                        "presentationNodeType": 1,
+                        "traitIds": [],
+                        "traitHashes": [],
+                        "parentNodeHashes": [ """ DestinyPresentationNodeDefinition """
+                            3686962409 """ DestinyPresentationNodeDefinition 3686962409 """
+                        ],
+                        "hash": 690633563,
+                        "index": 1143,
+                        "redacted": false,
+                        "blacklisted": false
+                    }, """ -DestinyPresentationNodeDefinition 690633563 """
+                ],
+                "hash": 536976377,
+                "index": 8508,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyCollectibleDefinition 536976377 """
+            """ DestinyCollectibleDefinition is super complex...
+        "iconWatermark": "/common/destiny2_content/icons/0337ec21962f67c7c493fedb447c4a9b.png",
+        "secondaryIcon": "/common/destiny2_content/icons/9cb266173ab772fa689b72bd365c28df.png",
+        "backgroundColor": {
+            "colorHash": 0,
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "alpha": 0
+        },
+        "screenshot": "/common/destiny2_content/screenshots/2591257541.jpg",
+        "itemTypeDisplayName": "Linear Fusion Rifle", """ <-
+        "flavorText": "\"A paltry echo of the Ascendant Plane.\" —Toland, the Shattered",
+        "uiItemDisplayStyle": "",
+        "itemTypeAndTierDisplayName": "Legendary Linear Fusion Rifle",
+        "displaySource": "Random Perks: This item cannot be reacquired from Collections.",
+        "action": {
+            "verbName": "Dismantle",
+            "verbDescription": "",
+            "isPositive": false,
+            "requiredCooldownSeconds": 0,
+            "requiredItems": [],
+            "progressionRewards": [],
+            "actionTypeLabel": "shard",
+            "rewardSheetHash": 0,
+            "rewardItemHash": 0,
+            "rewardSiteHash": 0,
+            "requiredCooldownHash": 0,
+            "deleteOnAction": true,
+            "consumeEntireStack": false,
+            "useOnAcquire": false
+        },
+        "inventory": { """ <-
+            "maxStackSize": 1,
+            "bucketTypeHash": 953998645, """ +DestinyInventoryBucketDefinition "953998645": {
+                """ also maps to equipmentSlotTypeHash
+                "displayProperties": {
+                    "description": "Machine guns and rocket launchers.",
+                    "name": "Power Weapons", """ <-
+                    "hasIcon": false
+                },
+                "scope": 0,
+                "category": 3,
+                "bucketOrder": 40,
+                "itemCount": 10,
+                "location": 1,
+                "hasTransferDestination": true,
+                "enabled": true,
+                "fifo": false,
+                "hash": 953998645,
+                "index": 2,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyInventoryBucketDefinition 953998645 """
+            "recoveryBucketTypeHash": 215593132, """ +DestinyInventoryBucketDefinition: "215593132": {
+                "displayProperties": {
+                    "description": "Items you may have missed, but that were recovered by your Ghost.",
+                    "name": "Lost Items",
+                    "hasIcon": false
+                },
+                "scope": 0,
+                "category": 0,
+                "bucketOrder": 0,
+                "itemCount": 21,
+                "location": 4,
+                "hasTransferDestination": false,
+                "enabled": true,
+                "fifo": true,
+                "hash": 215593132,
+                "index": 33,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyInventoryBucketDefinition 215593132 """
+            "tierTypeHash": 4008398120, """ +DestinyItemTierTypeDefinition: "4008398120": {
+                "displayProperties": { """ <-
+                    "description": "",
+                    "name": "Legendary", """ <-
+                    "hasIcon": false
+                },
+                "infusionProcess": {
+                    "baseQualityTransferRatio": 1.0,
+                    "minimumQualityIncrement": 6
+                },
+                "hash": 4008398120,
+                "index": 4,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyItemTierTypeDefinition 4008398120 """
+            "isInstanceItem": true,
+            "nonTransferrableOriginal": false,
+            "tierTypeName": "Legendary", """ <-
+            "tierType": 5,
+            "expirationTooltip": "",
+            "expiredInActivityMessage": "",
+            "expiredInOrbitMessage": "",
+            "suppressExpirationWhenObjectivesComplete": true
+        },
+        "stats": {
+            "disablePrimaryStatDisplay": false,
+            "statGroupHash": 3832607053, """ +DestinyStatGroupDefinition: "3832607053": {
+                "maximumValue": 100,
+                "uiPosition": 0,
+                "scaledStats": [ """ DestinyStatDefinition """
+                    { """ <-
+                        "statHash": 2961396640, """ +DestinyStatDefinition: "2961396640": { 
+                            "displayProperties": {
+                                "description": "The time in milliseconds before a weapon fires.",
+                                "name": "Charge Time",
+                                "hasIcon": false 
+                            },  
+                            "aggregationType": 2,
+                            "hasComputedBlock": false,
+                            "statCategory": 1,
+                            "interpolate": false,
+                            "hash": 2961396640, 
+                            "index": 18,
+                            "redacted": false,
+                            "blacklisted": false
+                        }, """ -DestinyStatDefinition 2961396640 """
+                        "maximumValue": 100,
+                        "displayAsNumeric": true,
+                        "displayInterpolation": [
+                            {
+                                "value": 0,
+                                "weight": 633
+                            },
+                            {
+                                "value": 100,
+                                "weight": 300
+                            }
+                        ]
+                    },
+                    """ ... more stats here ... """
+                ],
+                "overrides": {},
+                "hash": 3832607053,
+                "index": 75,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyStatGroupDefinition 3832607053 """
+            "stats": { """ DestinyStatDefinition """
+                "1480404414": { """ DestinyStatDefinition """
+                    "statHash": 1480404414, """ DestinyStatDefinition """
+                    "value": 0,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "1935470627": {
+                    "statHash": 1935470627,
+                    "value": 0,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "1885944937": {
+                    "statHash": 1885944937,
+                    "value": 0,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "3555269338": {
+                    "statHash": 3555269338,
+                    "value": 26,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "2961396640": {
+                    "statHash": 2961396640,
+                    "value": 533,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "4043523819": {
+                    "statHash": 4043523819,
+                    "value": 41,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "1240592695": {
+                    "statHash": 1240592695,
+                    "value": 48,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "155624089": {
+                    "statHash": 155624089,
+                    "value": 45,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "3871231066": {
+                    "statHash": 3871231066,
+                    "value": 5,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "4188031367": {
+                    "statHash": 4188031367,
+                    "value": 28,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "1931675084": {
+                    "statHash": 1931675084,
+                    "value": 36,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "943549884": {
+                    "statHash": 943549884,
+                    "value": 33,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "1345609583": {
+                    "statHash": 1345609583,
+                    "value": 64,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "2715839340": {
+                    "statHash": 2715839340,
+                    "value": 76,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                },
+                "2714457168": {
+                    "statHash": 2714457168,
+                    "value": 11,
+                    "minimum": 0,
+                    "maximum": 0,
+                    "displayMaximum": 100
+                }
+            },
+            "hasDisplayableStats": true,
+            "primaryBaseStatHash": 1480404414 """ +DestinyStatDefinition "1480404414": {
+                "displayProperties": {
+                    "description": "Higher Attack allows your weapons to damage higher-level opponents.",
+                    "name": "Attack",
+                    "hasIcon": false
+                },
+                "aggregationType": 1,
+                "hasComputedBlock": false,
+                "statCategory": 3,
+                "interpolate": false,
+                "hash": 1480404414,
+                "index": 13,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyStatDefinition 1480404414 """
+        },
+        "equippingBlock": {
+            "uniqueLabelHash": 0,
+            "equipmentSlotTypeHash": 953998645, """ +DestinyEquipmentSlotDefinition "953998645": {
+            also maps to DestinyInventoryBucketDefinition
+                "displayProperties": {
+                    "description": "Machine guns and rocket launchers.",
+                    "name": "Power Weapons",
+                    "hasIcon": false
+                },
+                "equipmentCategoryHash": 1885559401, """ unable to find a matching manifest, but is equipmentCategoryHash for kinetic energy and power weapons """
+                "bucketTypeHash": 953998645, """ DestinyInventoryBucketDefinition (also referenced in Scintillation directly, so may don't dereference automatically?) """
+                "applyCustomArtDyes": false,
+                "artDyeChannels": [
+                    {
+                        "artDyeChannelHash": 1667433279 """ DestinyArtDyeChannelDefinition: "1667433279": {
+                            "channelHash": 1667433279,
+                            "index": 4,
+                            "hash": 1667433279,
+                            "redacted": false,
+                            "blacklisted": false
+                        }, """ -DestinyArtDyeChannelDefinition 1667433279 """
+                    },
+                    {
+                        "artDyeChannelHash": 1667433278
+                    },
+                    {
+                        "artDyeChannelHash": 1667433277
+                    }
+                ],
+                "hash": 953998645,
+                "index": 9,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyEquipmentSlotDefinition 953998645 """
+            "attributes": 0,
+            "equippingSoundHash": 0,
+            "hornSoundHash": 0,
+            "ammoType": 3,
+            "displayStrings": [
+                ""
+            ]
+        },
+        "translationBlock": {
+            "weaponPatternHash": 2591257541, """ could be a ref to Item or DestinySandboxPatternDefinition since it refs translation group and content group hashes """
+            "defaultDyes": [ """ DestinyArtDyeReferenceDefinition """
+                {
+                    "channelHash": 1667433279,
+                    "dyeHash": 3862859007 """ +DestinyArtDyeReferenceDefinition "3862859007": {
+                        "artDyeHash": 3862859007,
+                        "index": 21270,
+                        "dyeManifestHash": 1807426303,
+                        """
+                        no manifest entry
+                        """
+                        "hash": 3862859007,
+                        "redacted": false,
+                        "blacklisted": false
+                    },
+                    """ -DestinyArtDyeReferenceDefinition 3862859007 """
+                },
+                {
+                    "channelHash": 1667433278,
+                    "dyeHash": 3862859006
+                },
+                {
+                    "channelHash": 1667433277,
+                    "dyeHash": 3862859005
+                }
+            ],
+            "lockedDyes": [],
+            "customDyes": [],
+            "arrangements": [ """ DestinySandboxPatternDefinition """
+                {
+                    "classHash": 0,
+                    "artArrangementHash": 2591257541 """ +DestinySandboxPatternDefinition "2591257541": {
+                    same ID as item? maybe sandbox ref instead? they reference art arrangements
+                        "patternHash": 2591257541,
+                        "patternGlobalTagIdHash": 3334758875,
+                        """ NO MANIFEST """
+                        "weaponContentGroupHash": 1753393736,
+                        """ NO MANIFEST """
+                        "weaponTranslationGroupHash": 3279674883,
+                        """ NO MANIFEST """
+                        "weaponTypeHash": 3957082778,
+                        """ NO MANIFEST """
+                        "weaponType": 22,
+                        "filters": [
+                            {       
+                                "artArrangementRegionHash": 2431786863,
+                                """ NO MANIFEST """
+                                "artArrangementRegionIndex": 3,
+                                "statHash": 3291498656,
+                                """ DestinyStatDefinition, but it's no-named """
+                                "arrangementIndexByStatValue": {
+                                    "0": 0,
+                                    "1": 1,
+                                    "2": 2,
+                                    "3": 3,
+                                    "4": 4,
+                                    "5": 5,
+                                    "6": 6,
+                                    "7": 7,
+                                    "8": 8,
+                                    "9": 9, 
+                                    "10": 10,
+                                    "11": 11,
+                                    "12": 12,
+                                    "13": 13,
+                                    "14": 14
+                                }
+                            },  
+                            {
+                                "artArrangementRegionHash": 442447909,
+                                "artArrangementRegionIndex": 1,
+                                "statHash": 0,
+                                "arrangementIndexByStatValue": {}
+                            },
+                            {
+                                "artArrangementRegionHash": 1848594060,
+                                "artArrangementRegionIndex": 0,
+                                "statHash": 0,
+                                "arrangementIndexByStatValue": {}
+                            },
+                            {
+                                "artArrangementRegionHash": 4196081331,
+                                "artArrangementRegionIndex": 5,
+                                "statHash": 3291498659,
+                                "arrangementIndexByStatValue": {
+                                    "0": 0,
+                                    "1": 1, 
+                                    "2": 2,
+                                    "3": 3,
+                                    "4": 4
+                                }   
+                            },      
+                            {       
+                                "artArrangementRegionHash": 3328994727,
+                                "artArrangementRegionIndex": 17,
+                                "statHash": 3291498656,
+                                "arrangementIndexByStatValue": {
+                                    "0": 0,
+                                    "1": 1,
+                                    "2": 2,
+                                    "3": 3,
+                                    "4": 4,
+                                    "5": 5,
+                                    "6": 6,
+                                    "7": 7,
+                                    "8": 8,
+                                    "9": 9,
+                                    "10": 10,
+                                    "11": 11,
+                                    "12": 12,
+                                    "13": 13,
+                                    "14": 14
+                                }
+                            },
+                            {
+                                "artArrangementRegionHash": 646625284,
+                                "artArrangementRegionIndex": 2,
+                                "statHash": 0,
+                                "arrangementIndexByStatValue": {}
+                            },
+                            {
+                                "artArrangementRegionHash": 1401519777,
+                                "artArrangementRegionIndex": 4,
+                                "statHash": 0,
+                                "arrangementIndexByStatValue": {}
+                            }
+                        ],
+                        "hash": 2591257541,
+                        "index": 850,
+                        "redacted": false,
+                        "blacklisted": false
+                    }, """ -DestinySandboxPatternDefinition 2591257541 """
+                }
+            ],
+            "hasGeometry": true
+        },
+        "preview": {
+            "screenStyle": "screen_style_sockets",
+            "previewVendorHash": 0,
+            "previewActionString": ""
+        },
+        "quality": {
+            "itemLevels": [],
+            "qualityLevel": 0,
+            "infusionCategoryName": "2865487836", """ NO MANIFEST """
+            "infusionCategoryHash": 2865487836, """ NO MANIFEST """
+            "infusionCategoryHashes": [
+                2865487836 """ NO MANIFEST """
+            ],
+            "progressionLevelRequirementHash": 3157915980, """ +DestinyProgressionLevelRequirementDefinition "3157915980": {
+                "requirementCurve": [
+                    {
+                        "value": 1.0,
+                        "weight": 15.0
+                    },
+                    {
+                        "value": 20.0,
+                        "weight": 15.0
+                    },
+                    {
+                        "value": 25.0,
+                        "weight": 20.0
+                    },
+                    {
+                        "value": 30.0,
+                        "weight": 20.0
+                    },
+                    {
+                        "value": 30.1,
+                        "weight": 21.0
+                    },
+                    {
+                        "value": 33.0,
+                        "weight": 25.0
+                    },
+                    {
+                        "value": 33.1,
+                        "weight": 26.0
+                    },
+                    {
+                        "value": 40.0,
+                        "weight": 30.0
+                    },
+                    {
+                        "value": 40.1,
+                        "weight": 31.0
+                    },
+                    {
+                        "value": 42.0,
+                        "weight": 32.0
+                    },
+                    {
+                        "value": 45.0,
+                        "weight": 37.0
+                    },
+                    {
+                        "value": 55.0,
+                        "weight": 50.0
+                    }
+                ],
+                "progressionHash": 1716568313, """ DestinyProgressionDefinition or DestinyProgressionMappingDefinition """
+                "hash": 3157915980,
+                "index": 8,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyProgressionLevelRequirementDefinition 3157915980 """
+            "currentVersion": 0,
+            "versions": [ """ DestinyItemTierTypeDefinition or DestinyPowerCapDefinition? """
+                {
+                    "powerCapHash": 2759499571 """ +DestinyItemTierTypeDefinition "2759499571": {
+                        "displayProperties": {
+                            "description": "",
+                            "name": "Exotic",
+                            "hasIcon": false
+                        },
+                        "infusionProcess": {
+                            "baseQualityTransferRatio": 1.0,
+                            "minimumQualityIncrement": 4
+                        },
+                        "hash": 2759499571,
+                        "index": 5, 
+                        "redacted": false,
+                        "blacklisted": false
+                    }, """ -DestinyItemTierTypeDefinition 2759499571 """
+                    """ +DestinyPowerCapDefinition "2759499571": {
+                        "powerCap": 999990,
+                        "hash": 2759499571,
+                        "index": 0, 
+                        "redacted": false,
+                        "blacklisted": false
+                    }, """ -DestinyPowerCapDefinition 2759499571 """
+                }
+            ],
+            "displayVersionWatermarkIcons": [
+                "/common/destiny2_content/icons/0337ec21962f67c7c493fedb447c4a9b.png"
+            ]
+        },
+        "acquireRewardSiteHash": 0,
+        "acquireUnlockHash": 0,
+        "sockets": {
+            "detail": "Details",
+            "socketEntries": [ """ DestinySocketTypeDefinition """
+                {
+                    "socketTypeHash": 3956125808, """ +DestinySocketTypeDefinition "3956125808": {
+                    """ same ID as DestinySocketCategoryDefinition, but that's below """
+                        "displayProperties": {
+                            "description": "",
+                            "name": "",
+                            "hasIcon": false
+                        },
+                        "insertAction": {
+                            "actionExecuteSeconds": 0,
+                            "actionSoundHash": 0,
+                            "isPositiveAction": false,
+                            "actionType": 0
+                        },
+                        "plugWhitelist": [
+                            {
+                                "categoryHash": 1744546145,
+                                """ NO MANIFEST """
+                                "categoryIdentifier": "intrinsics"
+                            }
+                        ],
+                        "socketCategoryHash": 3956125808, """ +DestinySocketCategoryDefinition "3956125808": {
+                            "displayProperties": {
+                                "description": "The base qualities of a weapon.",
+                                "name": "INTRINSIC TRAITS",
+                                "hasIcon": false
+                            },
+                            "uiCategoryStyle": 2251952357,
+                            """ NO MANIFEST """
+                            "categoryStyle": 6,
+                            "hash": 3956125808,
+                            "index": 20,
+                            "redacted": false,
+                            "blacklisted": false
+                        }, """ -DestinySocketCategoryDefinition 3956125808 """
+                        "visibility": 0, 
+                        "alwaysRandomizeSockets": false,
+                        "isPreviewEnabled": false,
+                        "hideDuplicateReusablePlugs": false,
+                        "overridesUiAppearance": false,
+                        "avoidDuplicatesOnInitialization": false,
+                        "currencyScalars": [],
+                        "hash": 3956125808,
+                        "index": 217,
+                        "redacted": false,
+                        "blacklisted": false
+                    }, """ -DestinySocketTypeDefinition 3956125808 """
+                    "singleInitialItemHash": 3530948111, """ +DestinyInventoryItemDefinition "3530948111": {
+                        "displayProperties": {
+                            "description": "Fires a three-round burst.",
+                            "name": "Adaptive Burst",
+                            "icon": "/common/destiny2_content/icons/967fb4abc6ab98f74639d6c08e5f56ee.png",
+                            "iconSequences": [
+                                {
+                                    "frames": [
+                                        "/common/destiny2_content/icons/967fb4abc6ab98f74639d6c08e5f56ee.png"
+                                    ]
+                                },
+                                {
+                                    "frames": [
+                                        "/common/destiny2_content/icons/29d2bf2c0944a34e20a88b3f7b796767.png"
+                                    ]
+                                }
+                            ],
+                            "hasIcon": true
+                        },  
+                        "tooltipNotifications": [],
+                        "backgroundColor": {
+                            "colorHash": 0,
+                            "red": 0,
+                            "green": 0,
+                            "blue": 0,
+                            "alpha": 0
+                        },  
+                        "itemTypeDisplayName": "Intrinsic",
+                        "flavorText": "",
+                        "uiItemDisplayStyle": "ui_display_style_intrinsic_plug",
+                        "itemTypeAndTierDisplayName": "Common Intrinsic",
+                        "displaySource": "",
+                        "tooltipStyle": "build",
+                        """ skipping action """
+                        "inventory": {
+                            "maxStackSize": 1,
+                            "bucketTypeHash": 1469714392, """ +DestinyInventoryBucketDefinition "1469714392": {
+                                "displayProperties": {
+                                    "description": "Supplies and materials used in the field.",
+                                    "name": "Consumables",
+                                    "hasIcon": false
+                                },
+                                "scope": 1,
+                                "category": 1,
+                                "bucketOrder": 30,
+                                "itemCount": 50,
+                                "location": 0,
+                                "hasTransferDestination": true,
+                                "enabled": true,
+                                "fifo": false,
+                                "hash": 1469714392,
+                                "index": 14,
+                                "redacted": false,
+                                "blacklisted": false
+                            }, """ -DestinyInventoryBucketDefinition 1469714392 """
+                            "recoveryBucketTypeHash": 215593132,
+                            """ same as on item """
+                            "tierTypeHash": 3340296461, """ +DestinyItemTierTypeDefinition "3340296461": {
+                                "displayProperties": {
+                                    "description": "",
+                                    "name": "Basic",
+                                    "hasIcon": false
+                                },
+                                "infusionProcess": {
+                                    "baseQualityTransferRatio": 0.5,
+                                    "minimumQualityIncrement": 10
+                                },
+                                "hash": 3340296461,
+                                "index": 1,
+                                "redacted": false,
+                                "blacklisted": false
+                            }, """ -DestinyItemTierTypeDefinition 3340296461 """
+                            "isInstanceItem": false,
+                            "nonTransferrableOriginal": false,
+                            "tierTypeName": "Common",
+                            "tierType": 2,
+                            "expirationTooltip": "",
+                            "expiredInActivityMessage": "",
+                            "expiredInOrbitMessage": "",
+                            "suppressExpirationWhenObjectivesComplete": true
+                        },
+                        "plug": {
+                            "insertionRules": [],
+                            "plugCategoryIdentifier": "intrinsics",
+                            "plugCategoryHash": 1744546145,
+                            """ NO MANIFEST """
+                            "onActionRecreateSelf": false,
+                            "actionRewardSiteHash": 0,
+                            "actionRewardItemOverrideHash": 0,
+                            "insertionMaterialRequirementHash": 0,
+                            "previewItemOverrideHash": 0,
+                            "enabledMaterialRequirementHash": 0,
+                            "enabledRules": [],
+                            "uiPlugLabel": "",
+                            "plugStyle": 0,
+                            "plugAvailability": 0,
+                            "alternateUiPlugLabel": "",
+                            "alternatePlugStyle": 0,
+                            "isDummyPlug": false,
+                            "applyStatsToSocketOwnerItem": false
+                        },
+                        "acquireRewardSiteHash": 0,
+                        "acquireUnlockHash": 0,
+                        "investmentStats": [],
+                        "perks": [ """ DestinySandboxPerkDefinition """
+                            {
+                                "requirementDisplayString": "",
+                                "perkHash": 1492726186, """ +DestinySandboxPerkDefinition "1492726186": {
+                                    "displayProperties": {
+                                        "description": "Fires a three-round burst.",
+                                        "name": "Adaptive Burst",
+                                        "icon": "/common/destiny2_content/icons/967fb4abc6ab98f74639d6c08e5f56ee.png",
+                                        "iconSequences": [
+                                            {
+                                                "frames": [
+                                                    "/common/destiny2_content/icons/967fb4abc6ab98f74639d6c08e5f56ee.png"
+                                                ]
+                                            },
+                                            {
+                                                "frames": [
+                                                    "/common/destiny2_content/icons/29d2bf2c0944a34e20a88b3f7b796767.png"
+                                                ]
+                                            }
+                                        ],
+                                        "hasIcon": true
+                                    },
+                                    "isDisplayable": true,
+                                    "damageType": 0,
+                                    "hash": 1492726186,
+                                    "index": 3136,
+                                    "redacted": false,
+                                    "blacklisted": false
+                                }, """ -DestinySandboxPerkDefinition 1492726186 """
+                                "perkVisibility": 0
+                            }
+                        ],
+                        "summaryItemHash": 3520001075, """ +DestinyInventoryItemDefinition "3520001075": {
+                            "displayProperties": {
+                                "description": "", 
+                                "name": "Legendary Gear",
+                                "icon": "/common/destiny2_content/icons/8b02ac3fc520b8933a2654f5804fafbc.jpg",
+                                "iconSequences": [
+                                    {
+                                        "frames": [
+                                            "/common/destiny2_content/icons/8b02ac3fc520b8933a2654f5804fafbc.jpg",
+                                            "/common/destiny2_content/icons/a0ac992c9980ec97c3e40a0b6cdd409c.jpg"
+                                        ]
+                                    }
+                                ],
+                                "hasIcon": true
+                            },  
+                            "tooltipNotifications": [],
+                            "backgroundColor": {
+                                "colorHash": 0,
+                                "red": 0,
+                                "green": 0, 
+                                "blue": 0,
+                                "alpha": 0
+                            },  
+                            "itemTypeDisplayName": "",
+                            "flavorText": "",
+                            "uiItemDisplayStyle": "",
+                            "itemTypeAndTierDisplayName": "",
+                            "displaySource": "", 
+                            "inventory": {
+                                "maxStackSize": 1,
+                                "bucketTypeHash": 3621873013, """ +DestinyInventoryBucketDefinition "3621873013": {
+                                    "displayProperties": {
+                                        "hasIcon": false
+                                    },
+                                    "scope": 0,
+                                    "category": 0,
+                                    "bucketOrder": 0,
+                                    "itemCount": 1,
+                                    "location": 1,
+                                    "hasTransferDestination": false,
+                                    "enabled": false,
+                                    "fifo": true,
+                                    "hash": 3621873013,
+                                    "index": 27,
+                                    "redacted": false,
+                                    "blacklisted": false
+                                }, """ -DestinyInventoryBucketDefinition 3621873013 """
+                                "recoveryBucketTypeHash": 0,
+                                "tierTypeHash": 4008398120,
+                                """ DestinyItemTierTypeDefinition -- Legendary, we've seen this before
+                                "isInstanceItem": false,
+                                "nonTransferrableOriginal": false,
+                                "tierTypeName": "Legendary",
+                                "tierType": 5,
+                                "expirationTooltip": "",
+                                "expiredInActivityMessage": "",
+                                "expiredInOrbitMessage": "",
+                                "suppressExpirationWhenObjectivesComplete": true
+                            },
+                            "acquireRewardSiteHash": 0,
+                            "acquireUnlockHash": 0,
+                            "summary": {
+                                "sortPriority": 300
+                            },
+                            "investmentStats": [],
+                            "perks": [],
+                            "allowActions": true,
+                            "doesPostmasterPullHaveSideEffects": false,
+                            "nonTransferrable": true,
+                            "itemCategoryHashes": [ """ DestinyItemCategoryDefinition """
+                                3109687656 """ +DestinyItemCategoryDefinition "3109687656": {
+                                    "displayProperties": {
+                                        "description": "These items are not actually ones you can obtain in the game, but rather are used to display information.",
+                                        "name": "Dummies",
+                                        "hasIcon": false
+                                    },
+                                    "visible": false,
+                                    "deprecated": false,
+                                    "shortTitle": "Dummies",
+                                    "grantDestinyBreakerType": 0,
+                                    "grantDestinyItemType": 20,
+                                    "grantDestinySubType": 0,
+                                    "grantDestinyClass": 3,
+                                    "groupedCategoryHashes": [],
+                                    "isPlug": false,
+                                    "parentCategoryHashes": [],
+                                    "groupCategoryOnly": false,
+                                    "hash": 3109687656,
+                                    "index": 114,
+                                    "redacted": false,
+                                    "blacklisted": false
+                                }, """ -DestinyItemCategoryDefinition 3109687656 """
+                            ],
+                            "specialItemType": 0,
+                            "itemType": 20,
+                            "itemSubType": 0,
+                            "classType": 3,
+                            "breakerType": 0,
+                            "equippable": false,
+                            "defaultDamageType": 0,
+                            "isWrapper": false,
+                            "hash": 3520001075,
+                            "index": 86,
+                            "redacted": false,
+                            "blacklisted": false
+                        }, """ -DestinyInventoryItemDefinition 3520001075 """
+                        "allowActions": true,
+                        "doesPostmasterPullHaveSideEffects": false,
+                        "nonTransferrable": true,
+                        "itemCategoryHashes": [ """ DestinyItemCategoryDefinitions """
+                            """ Note: there appears to be a hierarchy to the DestinyItemCategoryDefinition items based on parentage
+                            59, """ +DestinyItemCategoryDefinition "59": {
+                                "displayProperties": {
+                                    "description": "Customizations for your items!",
+                                    "name": "Mods",
+                                    "hasIcon": false
+                                },
+                                "visible": true,
+                                "deprecated": false,
+                                "shortTitle": "Mods",
+                                "grantDestinyBreakerType": 0,
+                                "grantDestinyItemType": 19,
+                                "grantDestinySubType": 0,
+                                "grantDestinyClass": 3,
+                                "groupedCategoryHashes": [
+                                    4104513227,
+                                    1449602859,
+                                    152608020,
+                                    177260082,
+                                    874645359,
+                                    610365472,
+                                    303512563,
+                                    3448069192,
+                                    141186804,
+                                    1043342778
+                                ],
+                                "isPlug": false,
+                                "parentCategoryHashes": [],
+                                "groupCategoryOnly": false,
+                                "hash": 59,
+                                "index": 52,
+                                "redacted": false,
+                                "blacklisted": false
+                            }, """ -DestinyItemCategoryDefinition 59
+                            2237038328, """ +DestinyItemCategoryDefinition "2237038328": {
+                                "displayProperties": {
+                                    "description": "These represent properties that are intrinsic to weapons, and generally cannot be removed or replaced.",
+                                    "name": "Weapon Mods: Intrinsic",
+                                    "hasIcon": false
+                                },
+                                "visible": false,
+                                "deprecated": false,
+                                "shortTitle": "Weapon Mods: Intrinsic",
+                                "itemTypeRegex": "type_weapon_intrinsic",
+                                "grantDestinyBreakerType": 0,
+                                "plugCategoryIdentifier": "intrinsics",
+                                "grantDestinyItemType": 0,
+                                "grantDestinySubType": 0,
+                                "grantDestinyClass": 3,
+                                "groupedCategoryHashes": [],
+                                "isPlug": false,
+                                "parentCategoryHashes": [
+                                    610365472,
+                                    59
+                                ],
+                                "groupCategoryOnly": false,
+                                "hash": 2237038328,
+                                "index": 100,
+                                "redacted": false,
+                                "blacklisted": false
+                            }, """ -DestinyItemCategoryDefinition 2237038328
+                            610365472 """ +DestinyItemCategoryDefinition "610365472": {
+                                "displayProperties": {
+                                    "description": "Mods that can be applied to weapons.",
+                                    "name": "Weapon Mods",
+                                    "hasIcon": false
+                                },
+                                "visible": false,
+                                "deprecated": false,
+                                "shortTitle": "Weapon Mods",
+                                "grantDestinyBreakerType": 0,
+                                "grantDestinyItemType": 0,
+                                "grantDestinySubType": 0,
+                                "grantDestinyClass": 3,
+                                "groupedCategoryHashes": [
+                                    2237038328,
+                                    1052191496,
+                                    3708671066,
+                                    3124752623,
+                                    3085181971,
+                                    1709863189,
+                                    1334054322,
+                                    3072652064,
+                                    4184407433,
+                                    3055157023,
+                                    2076918099,
+                                    3836367751,
+                                    2411768833,
+                                    3866509906,
+                                    444756050,
+                                    3360831066,
+                                    945330047,
+                                    2840834688,
+                                    2779167812
+                                ],
+                                "isPlug": false,
+                                "parentCategoryHashes": [
+                                    59
+                                ],
+                                "groupCategoryOnly": true,
+                                "hash": 610365472,
+                                "index": 98,
+                                "redacted": false,
+                                "blacklisted": false
+                            }, """ -DestinyItemCategoryDefinition 610365472 """
+                        ],
+                        "specialItemType": 0,
+                        "itemType": 19,
+                        "itemSubType": 0,
+                        "classType": 3,
+                        "breakerType": 0,
+                        "equippable": false,
+                        "defaultDamageType": 0,
+                        "isWrapper": false,
+                        "hash": 3530948111,
+                        "index": 12948,
+                        "redacted": false,
+                        "blacklisted": false
+                    }, """ -DestinyInventoryItemDefinition 3530948111 """
+                    "reusablePlugItems": [],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 6,
+                    "reusablePlugSetHash": 1117,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 3362409147, """ +DestinySocketTypeDefinition
+                    categoryIdentifier: barrels
+                    """ -DestinySocketTypeDefinition
+                    "singleInitialItemHash": 1467527085, """ +DestinyInventoryItemDefinition
+                    name: Extended Barrel
+                    """ -DestinyInventoryItemDefinition
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 1467527085
+                            """ ^ see singleInitialItemhash """
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 2,
+                    "randomizedPlugSetHash": 2044988252, """ +DestinyPlugSetDefinition 2044988252 """ "2044988252": {
+                        "displayProperties": {
+                            "description": "",
+                            "name": "",
+                            "hasIcon": false
+                        },
+                        "reusablePlugItems": [ """ DestinyInventoryItemDefinition """
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 839105230 """ +DestinyInventoryItemDefinition: Arrowhead Brake """
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 3661387068
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 4090651448
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 1467527085
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 1840239774
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 202670084
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 3250034553
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 1392496348
+                            },
+                            {
+                                "craftingRequirements": {
+                                    "unlockRequirements": [],
+                                    "materialRequirementHashes": []
+                                },
+                                "weight": 0.0,
+                                "alternateWeight": 0.0,
+                                "currentlyCanRoll": true,
+                                "plugItemHash": 1482024992
+                            }
+                        ],
+                        "isFakePlugSet": false,
+                        "hash": 2044988252,
+                        "index": 245,
+                        "redacted": false,
+                        "blacklisted": false
+                    }, """ -DestinyPlugSetDefinition 2044988252 """
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 930927103, """ batteries """
+                    "singleInitialItemHash": 3868766766, """ Particle Repeater """
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 3868766766
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 2,
+                    "randomizedPlugSetHash": 2515290978,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 1215804697, """ frames """
+                    "singleInitialItemHash": 247725512, """ Rapid Hit """
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 247725512
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 2,
+                    "randomizedPlugSetHash": 569426587,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 1215804696, """ frames """
+                    "singleInitialItemHash": 831391274, """ Hatchling """
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 831391274
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 2,
+                    "randomizedPlugSetHash": 3641544301,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 1288200359, """ +DestinySocketTypeDefinition
+                    pluginWhitelist.categoryIdentifier: shader, shader_default
+                    """ -DestinySocketTypeDefinition
+                    "singleInitialItemHash": 4248210736, """ +DestinyInventoryItemDefinition
+                    Default Shader
+                    """ -DestinyInventoryItemDefinition
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 412487139
+                            """ Shaped Keepsake """
+                        },
+                        {
+                            "plugItemHash": 412487138
+                        },
+                        {
+                            "plugItemHash": 3515978520
+                        },
+                        {
+                            "plugItemHash": 2117628185
+                        },
+                        {
+                            "plugItemHash": 1559478790
+                        },
+                        {
+                            "plugItemHash": 3510413604
+                        },
+                        {
+                            "plugItemHash": 195075337
+                        },
+                        {
+                            "plugItemHash": 195075336
+                        },
+                        {
+                            "plugItemHash": 195075339
+                        },
+                        {
+                            "plugItemHash": 4248210736
+                            """ Default Shader """
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 7,
+                    "reusablePlugSetHash": 236342179, """ +DestinyPlugSetDefinition
+                    seems to collect all the shaders
+                    """ -DestinyPlugSetDefinition
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 449505874, """ adept mods """
+                    "singleInitialItemHash": 2323986101, """ Empty Mod Socket """
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 4003264426
+                        },
+                        {
+                            "plugItemHash": 299264772
+                        },
+                        {
+                            "plugItemHash": 4278960718
+                        },
+                        {
+                            "plugItemHash": 634781242
+                        },
+                        {
+                            "plugItemHash": 744770875
+                        },
+                        {
+                            "plugItemHash": 1225726778
+                        },
+                        {
+                            "plugItemHash": 1525622117
+                        },
+                        {
+                            "plugItemHash": 1710791394
+                        },
+                        {
+                            "plugItemHash": 3789184904
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": true,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 7,
+                    "reusablePlugSetHash": 449505874,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 2218962841, """ masterworks """
+                    "singleInitialItemHash": 4283235143, """ Tier 1: Reload Speed """
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 1590375901
+                        },
+                        {
+                            "plugItemHash": 1590375902
+                        },
+                        {
+                            "plugItemHash": 1590375903
+                        },
+                        {
+                            "plugItemHash": 1590375896
+                        },
+                        {
+                            "plugItemHash": 1590375897
+                        },
+                        {
+                            "plugItemHash": 1590375898
+                        },
+                        {
+                            "plugItemHash": 1590375899
+                        },
+                        {
+                            "plugItemHash": 1590375892
+                        },
+                        {
+                            "plugItemHash": 1590375893
+                        },
+                        {
+                            "plugItemHash": 384158423
+                        },
+                        {
+                            "plugItemHash": 150943607
+                        },
+                        {
+                            "plugItemHash": 150943604
+                        },
+                        {
+                            "plugItemHash": 150943605
+                        },
+                        {
+                            "plugItemHash": 150943602
+                        },
+                        {
+                            "plugItemHash": 150943603
+                        },
+                        {
+                            "plugItemHash": 150943600
+                        },
+                        {
+                            "plugItemHash": 150943601
+                        },
+                        {
+                            "plugItemHash": 150943614
+                        },
+                        {
+                            "plugItemHash": 150943615
+                        },
+                        {
+                            "plugItemHash": 2697220197
+                        },
+                        {
+                            "plugItemHash": 518224747
+                        },
+                        {
+                            "plugItemHash": 518224744
+                        },
+                        {
+                            "plugItemHash": 518224745
+                        },
+                        {
+                            "plugItemHash": 518224750
+                        },
+                        {
+                            "plugItemHash": 518224751
+                        },
+                        {
+                            "plugItemHash": 518224748
+                        },
+                        {
+                            "plugItemHash": 518224749
+                        },
+                        {
+                            "plugItemHash": 518224738
+                        },
+                        {
+                            "plugItemHash": 518224739
+                        },
+                        {
+                            "plugItemHash": 186337601
+                        },
+                        {
+                            "plugItemHash": 1486919755
+                        },
+                        {
+                            "plugItemHash": 1486919752
+                        },
+                        {
+                            "plugItemHash": 1486919753
+                        },
+                        {
+                            "plugItemHash": 1486919758
+                        },
+                        {
+                            "plugItemHash": 1486919759
+                        },
+                        {
+                            "plugItemHash": 1486919756
+                        },
+                        {
+                            "plugItemHash": 1486919757
+                        },
+                        {
+                            "plugItemHash": 1486919746
+                        },
+                        {
+                            "plugItemHash": 1486919747
+                        },
+                        {
+                            "plugItemHash": 3486498337
+                        },
+                        {
+                            "plugItemHash": 4283235143
+                        },
+                        {
+                            "plugItemHash": 4283235140
+                        },
+                        {
+                            "plugItemHash": 4283235141
+                        },
+                        {
+                            "plugItemHash": 4283235138
+                        },
+                        {
+                            "plugItemHash": 4283235139
+                        },
+                        {
+                            "plugItemHash": 4283235136
+                        },
+                        {
+                            "plugItemHash": 4283235137
+                        },
+                        {
+                            "plugItemHash": 4283235150
+                        },
+                        {
+                            "plugItemHash": 4283235151
+                        },
+                        {
+                            "plugItemHash": 758092021
+                        },
+                        {
+                            "plugItemHash": 3928770367
+                        },
+                        {
+                            "plugItemHash": 3928770364
+                        },
+                        {
+                            "plugItemHash": 3928770365
+                        },
+                        {
+                            "plugItemHash": 3928770362
+                        },
+                        {
+                            "plugItemHash": 3928770363
+                        },
+                        {
+                            "plugItemHash": 3928770360
+                        },
+                        {
+                            "plugItemHash": 3928770361
+                        },
+                        {
+                            "plugItemHash": 3928770358
+                        },
+                        {
+                            "plugItemHash": 3928770359
+                        },
+                        {
+                            "plugItemHash": 3803457565
+                        },
+                        {
+                            "plugItemHash": 4105787909
+                        },
+                        {
+                            "plugItemHash": 4105787910
+                        },
+                        {
+                            "plugItemHash": 4105787911
+                        },
+                        {
+                            "plugItemHash": 4105787904
+                        },
+                        {
+                            "plugItemHash": 4105787905
+                        },
+                        {
+                            "plugItemHash": 4105787906
+                        },
+                        {
+                            "plugItemHash": 4105787907
+                        },
+                        {
+                            "plugItemHash": 4105787916
+                        },
+                        {
+                            "plugItemHash": 4105787917
+                        },
+                        {
+                            "plugItemHash": 1154004463
+                        },
+                        {
+                            "plugItemHash": 3353797898
+                        },
+                        {
+                            "plugItemHash": 3353797897
+                        },
+                        {
+                            "plugItemHash": 3353797896
+                        },
+                        {
+                            "plugItemHash": 3353797903
+                        },
+                        {
+                            "plugItemHash": 3353797902
+                        },
+                        {
+                            "plugItemHash": 3353797901
+                        },
+                        {
+                            "plugItemHash": 3353797900
+                        },
+                        {
+                            "plugItemHash": 3353797891
+                        },
+                        {
+                            "plugItemHash": 3353797890
+                        },
+                        {
+                            "plugItemHash": 3128594062
+                        },
+                        {
+                            "plugItemHash": 2203506848
+                        },
+                        {
+                            "plugItemHash": 2203506851
+                        },
+                        {
+                            "plugItemHash": 2203506850
+                        },
+                        {
+                            "plugItemHash": 2203506853
+                        },
+                        {
+                            "plugItemHash": 2203506852
+                        },
+                        {
+                            "plugItemHash": 2203506855
+                        },
+                        {
+                            "plugItemHash": 2203506854
+                        },
+                        {
+                            "plugItemHash": 2203506857
+                        },
+                        {
+                            "plugItemHash": 2203506856
+                        },
+                        {
+                            "plugItemHash": 1639384016
+                        },
+                        {
+                            "plugItemHash": 892374263
+                        },
+                        {
+                            "plugItemHash": 892374260
+                        },
+                        {
+                            "plugItemHash": 892374261
+                        },
+                        {
+                            "plugItemHash": 892374258
+                        },
+                        {
+                            "plugItemHash": 892374259
+                        },
+                        {
+                            "plugItemHash": 892374256
+                        },
+                        {
+                            "plugItemHash": 892374257
+                        },
+                        {
+                            "plugItemHash": 892374270
+                        },
+                        {
+                            "plugItemHash": 892374271
+                        },
+                        {
+                            "plugItemHash": 2993547493
+                        },
+                        {
+                            "plugItemHash": 3673787993
+                        },
+                        {
+                            "plugItemHash": 3673787994
+                        },
+                        {
+                            "plugItemHash": 3673787995
+                        },
+                        {
+                            "plugItemHash": 3673787996
+                        },
+                        {
+                            "plugItemHash": 3673787997
+                        },
+                        {
+                            "plugItemHash": 3673787998
+                        },
+                        {
+                            "plugItemHash": 3673787999
+                        },
+                        {
+                            "plugItemHash": 3673787984
+                        },
+                        {
+                            "plugItemHash": 3673787985
+                        },
+                        {
+                            "plugItemHash": 266016299
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": true,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 3,
+                    "reusablePlugSetHash": 2326575037,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 3993098925, """ origin traits """
+                    "singleInitialItemHash": 1281216113, """ Stunning Recovery """
+                    "reusablePlugItems": [],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 6,
+                    "reusablePlugSetHash": 1330,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 1282012138, """ masterwork trackers """
+                    "singleInitialItemHash": 2240097604, """ Kill Tracker """
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 3915764595 """ Trials Memento Tracker """
+                        },
+                        {
+                            "plugItemHash": 3915764594
+                        },
+                        {
+                            "plugItemHash": 3915764593
+                        },
+                        {
+                            "plugItemHash": 1187045864
+                        },
+                        {
+                            "plugItemHash": 1690059054
+                        },
+                        {
+                            "plugItemHash": 1124054883
+                        },
+                        {
+                            "plugItemHash": 16638393
+                        },
+                        {
+                            "plugItemHash": 3624435060
+                        },
+                        {
+                            "plugItemHash": 16638392
+                        },
+                        {
+                            "plugItemHash": 2240097604 """ Kill Tracker """
+                        },
+                        {
+                            "plugItemHash": 2285636663 """ Crucible Tracker """
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": true,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 2,
+                    "reusablePlugSetHash": 1595611752, """ reusablePlugSetHash references the possible options """
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 3583996951, """ frame identifiers """
+                    "singleInitialItemHash": 0,
+                    "reusablePlugItems": [],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 1,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": false
+                },
+                {
+                    "socketTypeHash": 3201856887, """ mementos? """
+                    "singleInitialItemHash": 2909846572, """ Empty Memento Socket """
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 3408716127
+                        },
+                        {
+                            "plugItemHash": 2012491044
+                        },
+                        {
+                            "plugItemHash": 3831031876
+                        },
+                        {
+                            "plugItemHash": 4240221838
+                        },
+                        {
+                            "plugItemHash": 1425794805
+                        },
+                        {
+                            "plugItemHash": 3254175265
+                        },
+                        {
+                            "plugItemHash": 3088135833
+                        },
+                        {
+                            "plugItemHash": 2140049750
+                        },
+                        {
+                            "plugItemHash": 3060237106
+                        },
+                        {
+                            "plugItemHash": 3617209212
+                        },
+                        {
+                            "plugItemHash": 1429874803
+                        },
+                        {
+                            "plugItemHash": 18179099
+                        },
+                        {
+                            "plugItemHash": 1261107326
+                        },
+                        {
+                            "plugItemHash": 3686736741
+                        },
+                        {
+                            "plugItemHash": 1971919313
+                        },
+                        {
+                            "plugItemHash": 3809278479
+                        },
+                        {
+                            "plugItemHash": 2676329044
+                        },
+                        {
+                            "plugItemHash": 3921485172
+                        },
+                        {
+                            "plugItemHash": 1745945065
+                        },
+                        {
+                            "plugItemHash": 461727014
+                        },
+                        {
+                            "plugItemHash": 3100848450
+                        },
+                        {
+                            "plugItemHash": 4160988416
+                        },
+                        {
+                            "plugItemHash": 3481131423
+                        },
+                        {
+                            "plugItemHash": 1257952519
+                        },
+                        {
+                            "plugItemHash": 3346875528
+                        },
+                        {
+                            "plugItemHash": 2519247511
+                        },
+                        {
+                            "plugItemHash": 4049753919
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 3,
+                    "reusablePlugSetHash": 3008236044,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 4251072212, """ "enhancer" mods """
+                    "singleInitialItemHash": 253922071,
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 2728416798
+                        },
+                        {
+                            "plugItemHash": 2728416797
+                        },
+                        {
+                            "plugItemHash": 2728416796
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 3,
+                    "reusablePlugSetHash": 1934900354,
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                },
+                {
+                    "socketTypeHash": 3778979945, """ infusion """
+                    "singleInitialItemHash": 4043342755,
+                    "reusablePlugItems": [
+                        {
+                            "plugItemHash": 4275472612 """ Increase Weapon Level """
+                        },
+                        {
+                            "plugItemHash": 4275472613
+                        },
+                        {
+                            "plugItemHash": 4275472614
+                        },
+                        {
+                            "plugItemHash": 4275472615
+                        },
+                        {
+                            "plugItemHash": 4275472608
+                        },
+                        {
+                            "plugItemHash": 3324845151
+                        }
+                    ],
+                    "preventInitializationOnVendorPurchase": false,
+                    "preventInitializationWhenVersioning": false,
+                    "hidePerksInItemTooltip": false,
+                    "plugSources": 3,
+                    "reusablePlugSetHash": 2432089606, """ not named, but includes things like Increase Weapon Level """
+                    "overridesUiAppearance": false,
+                    "defaultVisible": true
+                }
+            ],
+            "intrinsicSockets": [
+                {
+                    "plugItemHash": 3690882495, """ Legendary Infusion """
+                    "socketTypeHash": 3694988647, """ plugWhitelist.category: infuse """
+                    "defaultVisible": true
+                }
+            ],
+            "socketCategories": [ """ DestinySocketCategoryDefinition """
+                {
+                    "socketCategoryHash": 3956125808, """ INTRINSIC TRAITS """
+                    "socketIndexes": [
+                        0
+                    ]
+                },
+                {
+                    "socketCategoryHash": 4241085061, """ WEAPON PERKS """
+                    "socketIndexes": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        8,
+                        9
+                    ]
+                },
+                {
+                    "socketCategoryHash": 2048875504, """ WEAPON COSMETICS """
+                    "socketIndexes": [
+                        5
+                    ]
+                },
+                {
+                    "socketCategoryHash": 2685412949, """ WEAPON MODS """
+                    "socketIndexes": [
+                        6,
+                        7,
+                        11,
+                        12,
+                        13
+                    ]
+                },
+                {
+                    "socketCategoryHash": 3583996951, """ plugWhitelist.categoryIdentifier: crafting.plugs.frame_identifiers """
+                    "socketIndexes": [
+                        10
+                    ]
+                }
+            ]
+        },
+        "talentGrid": {
+            "talentGridHash": 521135891, """ +DestinyTalentGridDefinition "521135891": {
+                "maxGridLevel": 0,
+                "gridLevelPerColumn": 0,
+                "progressionHash": 0,
+                "nodes": [],
+                "calcMaxGridLevel": 0,
+                "calcProgressToMaxLevel": 0,
+                "exclusiveSets": [],
+                "independentNodeIndexes": [],
+                "maximumRandomMaterialRequirements": 0,
+                "groups": {},
+                "nodeCategories": [],
+                "hash": 521135891,
+                "index": 0,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyTalentGridDefinition 521135891 """
+            "itemDetailString": "Details",
+            "hudDamageType": 1
+        },
+        "investmentStats": [ """ Each is a DestinyStatDefinition """
+            {
+                "statTypeHash": 1480404414, """ Attack """
+                "value": 0,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 1935470627, """ Power """
+                "value": 0,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 1885944937, """ no name """
+                "value": 0,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 3555269338, """ Zoom """
+                "value": 26,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 2961396640, """ Charge Time """
+                "value": 30,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 4043523819, """ Impact """
+                "value": 70,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 1240592695, """ Range """
+                "value": 48,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 155624089, """ Stability """
+                "value": 45,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 3871231066, """ Magazine """
+                "value": 45,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 4188031367, """ Reload Speed """
+                "value": 28,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 1931675084, """ Inventory Size (ammo reserves) """
+                "value": 36,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 943549884, """ Handling """
+                "value": 33,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 1345609583, """ Aim Assistance """
+                "value": 64,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 2715839340, """ Recoil Direction """
+                "value": 76,
+                "isConditionallyActive": false
+            },
+            {
+                "statTypeHash": 2714457168, """ Airborne Effectiveness """
+                "value": 11,
+                "isConditionallyActive": false
+            }
+        ],
+        "perks": [
+            {
+                "requirementDisplayString": "",
+                "perkHash": 2015255840, """ +DestinySandboxPerkDefinition """ "2015255840": {
+                    "displayProperties": {
+                        "description": "",
+                        "name": "",
+                        "hasIcon": false
+                    },
+                    "isDisplayable": false,
+                    "damageType": 7,
+                    "damageTypeHash": 3949783978, """ +DestinyDamageTypeDefinition """ "3949783978": { 
+                        "displayProperties": {
+                            "description": "This deals Strand damage.",
+                            "name": "Strand",
+                            "icon": "/common/destiny2_content/icons/DestinyDamageTypeDefinition_b2fe51a94f3533f97079dfa0d27a4096.png",
+                            "hasIcon": true
+                        },
+                        "transparentIconPath": "/img/destiny_content/damage_types/destiny2/strand-white-185x185.png",
+                        "showIcon": true,
+                        "enumValue": 7,
+                        "color": {
+                            "red": 53,
+                            "green": 227,
+                            "blue": 102,
+                            "alpha": 255
+                        },
+                        "hash": 3949783978,
+                        "index": 6,
+                        "redacted": false,
+                        "blacklisted": false
+                    } """ -DestinyDamageTypeDefinition 3949783978 """
+                    "hash": 2015255840,
+                    "index": 3340,
+                    "redacted": false,
+                    "blacklisted": false
+                }, """ -DestinySandboxPerkDefinition 2015255840 """
+                "perkVisibility": 0
+            }
+        ],
+        "summaryItemHash": 3520001075, """ Legendary Gear """
+        "allowActions": true,
+        "doesPostmasterPullHaveSideEffects": false,
+        "nonTransferrable": false,
+        "itemCategoryHashes": [ """ DestinyItemCategoryDefinition """
+            4, """ Power Weapons """
+            1, """ Weapon """
+            9, """ Fusion Rifle """
+            1504945536 """ Linear Fusion Rifles """
+        ],
+        "specialItemType": 0,
+        "itemType": 3,
+        "itemSubType": 22,
+        "classType": 3,
+        "breakerType": 0,
+        "equippable": true,
+        "damageTypeHashes": [ """ DestinyDamageTypeDefinition """
+            3949783978 """ +DestinyDamageTypeDefinition """ "3949783978": {
+                "displayProperties": {
+                    "description": "This deals Strand damage.",
+                    "name": "Strand",
+                    "icon": "/common/destiny2_content/icons/DestinyDamageTypeDefinition_b2fe51a94f3533f97079dfa0d27a4096.png",
+                    "hasIcon": true
+                },
+                "transparentIconPath": "/img/destiny_content/damage_types/destiny2/strand-white-185x185.png",
+                "showIcon": true,
+                "enumValue": 7,
+                "color": {
+                    "red": 53,
+                    "green": 227,
+                    "blue": 102,
+                    "alpha": 255
+                },
+                "hash": 3949783978,
+                "index": 6,
+                "redacted": false,
+                "blacklisted": false
+            } """ -DestinyDamageTypeDefinition 3949783978
+        ],
+        "damageTypes": [
+            7
+        ],
+        "defaultDamageType": 7,
+        "defaultDamageTypeHash": 3949783978, """ See damageTypeHashes entry, DestinyDamageTypeDefinition """
+        "isWrapper": false,
+        "traitIds": [
+            "item.weapon.linear_fusion_rifle"
+        ],
+        "traitHashes": [ """ DestinyTraitDefinition """
+            2100142349 """ +DestinyTraitDefinition """ "2100142349": {
+            """ I'm assuming this matches the traitIds above... we can probably map these if we wanted to into an enum """
+                "displayProperties": {
+                    "description": "",
+                    "name": "",
+                    "hasIcon": false
+                },
+                "displayHint": "",
+                "hash": 2100142349,
+                "index": 32,
+                "redacted": false,
+                "blacklisted": false
+            }, """ -DestinyTraitDefinition 2100142349 """
+        ],
+        "hash": 2591257541,
+        "index": 16511,
+        "redacted": false,
+        "blacklisted": false
+    }
+} """ -DestinyInventoryItemDefinition 2591257541 """

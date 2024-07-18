@@ -3,3 +3,5 @@ data
 config.json
 *.pyc
 __pycache__
+*.swp
+*.swo

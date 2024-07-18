@@ -24,7 +24,6 @@ class BungieApi:
         return self.request(path, use_cache, bust_cache).get('json')
     
     def request(self, path: str, use_cache: bool=False, bust_cache: bool=False):
-        print("+bungie_api.BungieApi.request()")
         url = f'https://www.bungie.net{path}'
         key = self.sanitize_path_for_key(path)
 
@@ -32,24 +31,28 @@ class BungieApi:
             expired = self.cache_expired(key)
             if expired is None:
                 if self.key_is_cached_on_disk(key):
-                    print(f"Key {key} not in cache but on disk, caching from disk")
-                    with open(f'data/{key}', 'rb') as f:
-                        data = f.read()
-                    json_data = None
-                    try:
-                        json_data = json.loads(data)
-                    except Exception:
-                        print("File is not JSON")
-                        pass
-                    self.cache[key] = {
-                        'json': json_data,
-                        'text': None,
-                        'content': data,
-                        'response': None,
-                        'timestamp': datetime.now(),
-                        'filename': key,
-                    }
-                    return self.cache[key]
+                    if not bust_cache:
+                        print(f"Key {key} not in cache but on disk, caching from disk")
+                        with open(f'data/{key}', 'rb') as f:
+                            data = f.read()
+                        json_data = None
+                        try:
+                            json_data = json.loads(data)
+                        except Exception:
+                            print("File is not JSON")
+                            pass
+                        self.cache[key] = {
+                            'json': json_data,
+                            'text': None,
+                            'content': data,
+                            'response': None,
+                            'timestamp': datetime.now(),
+                            'filename': key,
+                        }
+                        return self.cache[key]
+                    else:
+                        print(f"Key {key} not in cache, but on disk, but busting as requested")
+                        self.prune_cache(key)
                 else:
                     print(f"Key {key} not in cache, fetching from network")
             elif expired is True:
