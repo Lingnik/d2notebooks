@@ -96,16 +96,26 @@ class ManifestComponent():
 
     @property
     def weapon_frame(self):
-        return self.socket_default_for_category('intrinsics')
+        if 'weaponFrame' not in self.manifest.keys():
+            self.manifest['weaponFrame'] = self.socket_default_for_category('intrinsics')
+        return self.manifest.get('weaponFrame')
+
+    @property
+    def item_type(self):
+        return self.manifest.get('itemTypeDisplayName')
 
     @property
     def sockets(self):
+        # TODO: Perhaps we should mutate the cache, recreating the sockets as a dict for fast lookups in other queries?
+        if 'socketsMutated' in self.manifest:
+            # The mutations are cached, so return them quickly
+            return self.manifest.get('sockets')
         if 'sockets' not in self.manifest:
             print(f"Manifest object '{self.display_properties.name}' ({self.hash}) does not have key 'sockets'")
             return None
         if 'socketEntries' not in self.manifest.get('sockets'):
             raise NotImplementedError("Manifest object does not have key 'sockets.socketEntries'")
-        # Hydrate resulting dict with:
+        # Hydrate cache and resulting dict with:
         # * socketType: socketTypeHash -> plugWhitelist -> str.join([].get('categoryIdentifier')) --OR-- build a static enum? --OR-- IGNORE
         # * socketCategory: socketTypeHash -> socketCategoryHash -> display_properties.name
         sockets = self.manifest.get('sockets').get('socketEntries').copy()
@@ -150,6 +160,8 @@ class ManifestComponent():
                     can_roll = rpi.get('currentlyCanRoll')
                     sockets[i]['reusablePlugSet'][rpi_hash]['currentlyCanRoll'] = can_roll
 
+        # Mark the socket mutation complete and cached
+        self.manifest['socketsMutated'] = True
         return sockets
         # socket_types = {
         #     x.get('socketTypeHash'):
