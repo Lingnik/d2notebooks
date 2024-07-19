@@ -5,6 +5,7 @@ class ManifestComponent():
     def __init__(self, manifest, base_manifest):
         self._raw_manifest = manifest
         self.base_manifest = base_manifest
+        self.api = base_manifest.api
 
     @property
     def manifest(self):
@@ -34,7 +35,7 @@ class ManifestComponent():
 
     @property
     def name(self) -> str:
-        return self.display_properties.get('name', None)
+        return self.display_properties.name
 
     @property
     def stats(self):
@@ -82,10 +83,26 @@ class ManifestComponent():
             in enumerate(self.manifest.get('investmentStats'))
         }
 
+    def socket_default_for_category(self, category):
+        results = [
+            socket.get('singleInitialItemName')
+            for socket in self.sockets or {}
+            if category in [
+                socketType.get('categoryIdentifier')
+                for socketType in socket.get('socketType', {}).get('plugWhitelist', {})
+            ]
+        ]
+        return results[0] if results else None
+
+    @property
+    def weapon_frame(self):
+        return self.socket_default_for_category('intrinsics')
+
     @property
     def sockets(self):
         if 'sockets' not in self.manifest:
-            raise NotImplementedError("Manifest object does not have key 'sockets'")
+            print(f"Manifest object '{self.display_properties.name}' ({self.hash}) does not have key 'sockets'")
+            return None
         if 'socketEntries' not in self.manifest.get('sockets'):
             raise NotImplementedError("Manifest object does not have key 'sockets.socketEntries'")
         # Hydrate resulting dict with:
@@ -93,26 +110,29 @@ class ManifestComponent():
         # * socketCategory: socketTypeHash -> socketCategoryHash -> display_properties.name
         sockets = self.manifest.get('sockets').get('socketEntries').copy()
         for i, socket in enumerate(sockets):
-            socket_type = api.manifest.DestinySocketTypeDefinition[socket.get('socketTypeHash')].manifest
+            if socket.get('socketTypeHash') == 0:
+                # print(f"Encountered socketTypeHash==0 on {self.display_properties.name}, socket_i={i}, socket={socket}")
+                continue
+            socket_type = self.api.manifest.DestinySocketTypeDefinition[socket.get('socketTypeHash')].manifest
             sockets[i]['socketType'] = socket_type
-            socket_category = api.manifest.DestinySocketCategoryDefinition[socket['socketType'].get('socketCategoryHash')].manifest
+            socket_category = self.api.manifest.DestinySocketCategoryDefinition[socket['socketType'].get('socketCategoryHash')].manifest
             sockets[i]['socketType']['socketCategory'] = socket_category
             
             single_initial_item_hash = socket.get('singleInitialItemHash')
             if single_initial_item_hash:
-                item = api.manifest.DestinyInventoryItemDefinition[single_initial_item_hash]
+                item = self.api.manifest.DestinyInventoryItemDefinition[single_initial_item_hash]
                 item_name = item.display_properties.name
                 sockets[i]['singleInitialItemName'] = item_name
 
             sockets[i]['randomizedPlugSet'] = {}
             randomized_plug_set_hash = socket.get('randomizedPlugSetHash')
             if randomized_plug_set_hash:
-                rps = api.manifest.DestinyPlugSetDefinition[randomized_plug_set_hash]
+                rps = self.api.manifest.DestinyPlugSetDefinition[randomized_plug_set_hash]
                 sockets[i]['randomizedPlugSet'] = {}
                 for rpi in rps.manifest.get('reusablePlugItems'):
                     rpi_hash = rpi.get('plugItemHash')
                     sockets[i]['randomizedPlugSet'][rpi_hash] = {}
-                    rpi_item_name = api.manifest.DestinyInventoryItemDefinition[rpi_hash].display_properties.name
+                    rpi_item_name = self.api.manifest.DestinyInventoryItemDefinition[rpi_hash].display_properties.name
                     sockets[i]['randomizedPlugSet'][rpi_hash]['name'] = rpi_item_name
                     can_roll = rpi.get('currentlyCanRoll')
                     sockets[i]['randomizedPlugSet'][rpi_hash]['currentlyCanRoll'] = can_roll
@@ -120,12 +140,12 @@ class ManifestComponent():
             sockets[i]['reusablePlugSet'] = {}
             reusable_plug_set_hash = socket.get('reusablePlugSetHash')
             if reusable_plug_set_hash:
-                rps = api.manifest.DestinyPlugSetDefinition[reusable_plug_set_hash]
+                rps = self.api.manifest.DestinyPlugSetDefinition[reusable_plug_set_hash]
                 sockets[i]['reusablePlugSet'] = {}
                 for rpi in rps.manifest.get('reusablePlugItems'):
                     rpi_hash = rpi.get('plugItemHash')
                     sockets[i]['reusablePlugSet'][rpi_hash] = {}
-                    rpi_item_name = api.manifest.DestinyInventoryItemDefinition[rpi_hash].display_properties.name
+                    rpi_item_name = self.api.manifest.DestinyInventoryItemDefinition[rpi_hash].display_properties.name
                     sockets[i]['reusablePlugSet'][rpi_hash]['name'] = rpi_item_name
                     can_roll = rpi.get('currentlyCanRoll')
                     sockets[i]['reusablePlugSet'][rpi_hash]['currentlyCanRoll'] = can_roll

@@ -62,21 +62,21 @@ class BungieManifest:
         self._fetch_and_cache('Manifest', '/Platform/Destiny2/Manifest/', 'json', bust_cache, manifest_data=manifest)
 
         # JSON files. You probably want these.
-        self._fetch_and_cache('jsonWorldContentPaths', mresponse['jsonWorldContentPaths']['en'], 'json', bust_cache)
+        # self._fetch_and_cache('jsonWorldContentPaths', mresponse['jsonWorldContentPaths']['en'], 'json', bust_cache)
 
         for key, value in mresponse['jsonWorldComponentContentPaths']['en'].items():
             self._fetch_and_cache(f"jsonWorldComponentContentPaths.{key}", value, 'json', bust_cache)
 
         # SQLite databases used by the mobile app. Some may have content not available otherwise.
-        self._fetch_and_cache('mobileAssetContentPath', mresponse['mobileAssetContentPath'], 'content', bust_cache)
+        # self._fetch_and_cache('mobileAssetContentPath', mresponse['mobileAssetContentPath'], 'content', bust_cache)
 
-        for version in mresponse['mobileGearAssetDataBases']:
-            self._fetch_and_cache(f"mobileGearAssetDataBases.{version['version']}", version['path'], 'content', bust_cache)
+        # for version in mresponse['mobileGearAssetDataBases']:
+        #     self._fetch_and_cache(f"mobileGearAssetDataBases.{version['version']}", version['path'], 'content', bust_cache)
 
         # This database seems to contain 71 objects that mostly align with jsonWorldContentPaths.
-        self._fetch_and_cache('mobileWorldContentPaths', mresponse['mobileWorldContentPaths']['en'], 'content', bust_cache)
+        # self._fetch_and_cache('mobileWorldContentPaths', mresponse['mobileWorldContentPaths']['en'], 'content', bust_cache)
 
-        self._fetch_and_cache('mobileClanBannerDatabasePath', mresponse['mobileClanBannerDatabasePath'], 'content', bust_cache)
+        # self._fetch_and_cache('mobileClanBannerDatabasePath', mresponse['mobileClanBannerDatabasePath'], 'content', bust_cache)
 
         # These return 403 Forbidden:
         # print("Caching mobileGearCDN")
